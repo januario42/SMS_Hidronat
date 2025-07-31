@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Hidronat - Escola de Natação e Hidroginástica | Jardim América, RJ</title>
+    <meta name="description" content="Escola de natação e hidroginástica no Jardim América, RJ. Aulas para iniciantes, TAF e terceira idade. Piscina de 25m, instrutores qualificados.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.jpg?height=60&width=60" alt="SMS Hidronat Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>SMS Hidronat</h1>
+                        <p>Escola de Natação e Hidroginástica</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#servicos">Serviços</a>
+                    <a href="#valores">Valores</a>
+                    <a href="#estrutura">Estrutura</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+               <!-- Botão do Menu Mobile -->
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menu mobile">
+    <i data-lucide="menu"></i>
+</button>
+
+<!-- Menu Mobile -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menu Mobile">
+    <ul>
+        <li><a href="#servicos" onclick="closeMobileMenu()">Serviços</a></li>
+        <li><a href="#valores" onclick="closeMobileMenu()">Valores</a></li>
+        <li><a href="#estrutura" onclick="closeMobileMenu()">Estrutura</a></li>
+        <li><a href="#depoimentos" onclick="closeMobileMenu()">Depoimentos</a></li>
+        <li><a href="#contato" onclick="closeMobileMenu()">Contato</a></li>
+    </ul>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <i data-lucide="map-pin"></i>
+                        Jardim América, RJ
+                    </div>
+                    <h2>Transforme sua vida através da <span class="highlight">natação</span></h2>
+                    <p>Aulas profissionais de natação para iniciantes, TAF e hidroginástica para terceira idade. Ambiente acolhedor e seguro para toda a família.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="openWhatsApp()">
+                            <i data-lucide="message-circle"></i>
+                            Agendar Aula Experimental
+                        </button>
+                        <button class="btn btn-outline" onclick="scrollToSection('contato')">
+                            <i data-lucide="phone"></i>
+                            Falar no WhatsApp
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Piscina SMS Hidronat" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h3>Nossos Serviços</h3>
+                <p>Oferecemos modalidades para todas as idades e objetivos, com instrutores qualificados e metodologia comprovada.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="waves"></i>
+                    </div>
+                    <h4>Natação para Iniciantes</h4>
+                    <p class="service-description">Aprenda a nadar com segurança e confiança</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Metodologia adaptada para cada aluno</li>
+                        <li><i data-lucide="check-circle"></i>Instrutores especializados</li>
+                        <li><i data-lucide="check-circle"></i>Ambiente seguro e acolhedor</li>
+                        <li><i data-lucide="check-circle"></i>Turmas reduzidas</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="timer"></i>
+                    </div>
+                    <h4>TAF (Teste de Aptidão Física)</h4>
+                    <p class="service-description">Preparação específica para concursos</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Treinamento focado em resultados</li>
+                        <li><i data-lucide="check-circle"></i>Técnicas de respiração</li>
+                        <li><i data-lucide="check-circle"></i>Cronometragem e acompanhamento</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h4>Hidroginástica Terceira Idade</h4>
+                    <p class="service-description">Exercícios aquáticos para melhor qualidade de vida</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Baixo impacto nas articulações</li>
+                        <li><i data-lucide="check-circle"></i>Melhora da mobilidade</li>
+                        <li><i data-lucide="check-circle"></i>Fortalecimento muscular</li>
+                        <li><i data-lucide="check-circle"></i>Socialização e bem-estar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section id="valores" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h3>Planos e Valores</h3>
+                <p>Escolha o plano que melhor se adapta à sua rotina</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h4>Plano 1x por semana</h4>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">110</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check-circle"></i>1 aula por semana</li>
+                            <li><i data-lucide="check-circle"></i>Horários flexíveis</li>
+                            <li><i data-lucide="check-circle"></i>Material incluso</li>
+                        </ul>
+                        <button class="btn btn-outline-full" onclick="openWhatsApp('Plano 1x por semana - R$ 110')">Escolher Plano</button>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h4>Plano 2x por semana</h4>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">145</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check-circle"></i>2 aulas por semana</li>
+                            <li><i data-lucide="check-circle"></i>Horários flexíveis</li>
+                            <li><i data-lucide="check-circle"></i>Material incluso</li>
+                        </ul>
+                        <button class="btn btn-outline-full" onclick="openWhatsApp('Plano 2x por semana - R$ 145')">Escolher Plano</button>
+                    </div>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h4>Plano 3x por semana</h4>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">165</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check-circle"></i>3 aulas por semana</li>
+                            <li><i data-lucide="check-circle"></i>Horários flexíveis</li>
+                            <li><i data-lucide="check-circle"></i>Material incluso</li>
+                            <li><i data-lucide="check-circle"></i>Melhor custo-benefício</li>
+                        </ul>
+                        <button class="btn btn-primary-full" onclick="openWhatsApp('Plano 3x por semana - R$ 165')">Escolher Plano</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section id="estrutura" class="structure">
+        <div class="container">
+            <div class="section-header">
+                <h3>Nossa Estrutura</h3>
+                <p>Instalações modernas e completas para seu conforto e segurança</p>
+            </div>
+            <div class="structure-content">
+                <div class="structure-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estrutura SMS Hidronat" loading="lazy">
+                </div>
+                <div class="structure-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="waves"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Piscina de 25 metros</h4>
+                            <p>Piscina semiolímpica com 4 raias e tratada com sistema moderno de filtragem.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Vestiários Completos</h4>
+                            <p>Vestiários masculino e feminino com chuveiros, armários e área de descanso.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="dumbbell"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Materiais Inclusos</h4>
+                            <p>Pranchas, pull-buoys e todos os equipamentos necessários para as aulas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h3>Benefícios da Natação</h3>
+                <p>Descubra como a natação pode transformar sua saúde e bem-estar</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h4>Saúde Cardiovascular</h4>
+                    <p>Fortalece o coração e melhora a circulação sanguínea</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i data-lucide="dumbbell"></i>
+                    </div>
+                    <h4>Fortalecimento Muscular</h4>
+                    <p>Trabalha todos os grupos musculares de forma equilibrada</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h4>Baixo Impacto</h4>
+                    <p>Protege articulações e reduz o risco de lesões</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h4>Bem-estar Mental</h4>
+                    <p>Reduz o estresse e melhora a qualidade do sono</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h3>O que nossos alunos dizem</h3>
+                <p>Histórias reais de transformação e conquistas</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"Aos 65 anos, nunca pensei que conseguiria aprender a nadar. Os professores da SMS Hidronat foram muito pacientes e carinhosos. Hoje me sinto mais confiante e saudável!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h5>Maria Rosa</h5>
+                            <span>Aluna de Natação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"Consegui passar no TAF do concurso da Polícia Civil graças ao treinamento específico que recebi aqui. A metodologia é excelente e os resultados aparecem rapidamente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div class="author-info">
+                            <h5>João Silva</h5>
+                            <span>Aluno de TAF</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"A hidroginástica mudou minha vida! Minhas dores nas articulações diminuíram muito e fiz novos amigos. O ambiente é muito acolhedor e familiar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h5>Ana Santos</h5>
+                            <span>Aluna de Hidroginástica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Agende sua Aula Experimental</h3>
+                <p>Preencha o formulário e entraremos em contato em até 2 horas</p>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Modalidade de Interesse</label>
+                            <select id="service" name="service" required>
+                                <option value="">Selecione uma modalidade</option>
+                                <option value="natacao-iniciantes">Natação para Iniciantes</option>
+                                <option value="taf">TAF (Teste de Aptidão Física)</option>
+                                <option value="hidroginastica">Hidroginástica Terceira Idade</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem (opcional)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary-full">
+                        <i data-lucide="send"></i>
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.jpg?height=50&width=50" alt="SMS Hidronat Logo" class="footer-logo-image">
+                        <div class="footer-logo-text">
+                            <h4>SMS Hidronat</h4>
+                            <p>Escola de Natação e Hidroginástica</p>
+                        </div>
+                    </div>
+                    <p>Transformando vidas através da natação há mais de 20 anos no Jardim América, RJ.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Contato</h5>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>(21) 98831-3327</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Rua Jornalista Geraldo Rocha 395, Rio de Janeiro, RJ</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="clock"></i>
+                            <span>Segunda a Sexta: 6h às 20h</span>
+                        </div>
+                    </div>
+                </div>
+              <div class="footer-section">
+                    <h5>Horários das Aulas</h5>
+                    <div class="schedule">
+                        <p>Seg, Qua e Sex: manhã, tarde e noite</p>
+                        <p>Ter e Qui: apenas no turno da manhã</p>
+                        <p class="schedule-note">*Os horários variam conforme a modalidade (natação, TAF, hidroginástica).</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SMS Hidronat. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" onclick="openWhatsApp()">
+        <i data-lucide="message-circle"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
