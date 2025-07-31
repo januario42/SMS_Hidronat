@@ -1,28 +1,13 @@
-// Mobile Menu Toggle com controle de propagação
-function toggleMobileMenu(event) {
-    event.stopPropagation(); // Impede que o clique no botão feche o menu
+// Mobile Menu Toggle
+function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     mobileMenu.classList.toggle('active');
 }
 
-// Fecha o menu ao clicar fora dele
-document.addEventListener('click', function(e) {
+function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-
-    if (
-        mobileMenu.classList.contains('active') &&
-        !mobileMenu.contains(e.target) &&
-        !mobileMenuBtn.contains(e.target)
-    ) {
-        mobileMenu.classList.remove('active');
-    }
-});
-
-// Impede que cliques dentro do menu fechem o menu
-document.getElementById('mobileMenu').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
+    mobileMenu.classList.remove('active');
+}
 
 // Smooth Scroll
 function scrollToSection(sectionId) {
@@ -63,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const service = formData.get('service');
             const message = formData.get('message');
             
+            // Service names mapping
             const serviceNames = {
                 'natacao-iniciantes': 'Natação para Iniciantes',
                 'taf': 'TAF (Teste de Aptidão Física)',
@@ -76,36 +62,59 @@ document.addEventListener('DOMContentLoaded', function() {
             whatsappMessage += `*WhatsApp:* ${phone}\n`;
             whatsappMessage += `*E-mail:* ${email}\n`;
             whatsappMessage += `*Modalidade:* ${serviceName}\n`;
+            
             if (message) {
                 whatsappMessage += `*Mensagem:* ${message}\n`;
             }
+            
             whatsappMessage += `\nEnviado através do site SMS Hidronat`;
             
             const phoneNumber = '5521988313327';
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            
             window.open(whatsappUrl, '_blank');
             
+            // Reset form
             contactForm.reset();
+            
+            // Show success message
             alert('Sua mensagem foi enviada! Entraremos em contato em breve.');
         });
     }
+});
 
-    // Animações com Intersection Observer
+// Scroll Effects
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.backdropFilter = 'blur(20px)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    }
+});
+
+// Intersection Observer for Animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.service-card, .pricing-card, .testimonial-card, .benefit');
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
+    
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -114,14 +123,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Scroll Effects (header dinâmico)
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.backdropFilter = 'blur(20px)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
     }
+});
+
+// Prevent mobile menu close when clicking inside
+document.getElementById('mobileMenu').addEventListener('click', function(e) {
+    e.stopPropagation();
 });
