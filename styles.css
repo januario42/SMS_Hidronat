@@ -142,21 +142,27 @@ body {
     background-color: #f1f5f9;
 }
 
+/* Mobile Menu - Corrigido */
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 100%;
+    top: 80px; /* Altura do header */
     left: 0;
     right: 0;
     background: white;
     border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     z-index: 999;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
 }
 
 .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
@@ -167,6 +173,11 @@ body {
     color: #475569;
     font-weight: 500;
     border-bottom: 1px solid #f1f5f9;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #0ea5e9;
 }
 
 .mobile-menu a:last-child {
@@ -902,6 +913,13 @@ section {
     .whatsapp-button i {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* Garantir que o menu mobile só apareça em telas pequenas */
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
     }
 }
 
